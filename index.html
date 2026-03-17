@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>ProApp</h2>
+    <button onclick="showTab('dashboard')">Dashboard</button>
+    <button onclick="showTab('users')">Users</button>
+    <button onclick="toggleTheme()">🌙 Mode</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="tab active">
+      <h1>Dashboard</h1>
+      <canvas id="chart"></canvas>
+    </section>
+
+    <!-- USERS -->
+    <section id="users" class="tab">
+      <h1>Users</h1>
+
+      <input type="text" id="search" placeholder="Search..." onkeyup="filterUsers()">
+
+      <ul id="userList">
+        <li>Ali</li>
+        <li>Vali</li>
+        <li>Sardor</li>
+        <li>Jasmin</li>
+      </ul>
+
+      <button onclick="openModal()" class="btn">+ Add User</button>
+    </section>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h3>Yangi user</h3>
+    <input id="newUser" placeholder="Ism">
+    <button onclick="addUser()">Qo‘shish</button>
+    <button onclick="closeModal()">Yopish</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
